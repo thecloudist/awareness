@@ -18,3 +18,18 @@ speak.py - uses 'espeak' for text-to-speech - crude but effective.
 
 Once the usb mini-spkr and usb mic are in, will attach that to the car so it will
 be an unteathered voice-controlled car.
+
+
+# Building Awareness 
+
+The supporting modules are as follows:
+
+gopigo.py - The gopigo package with all the primitive commands
+GpgMotion.py - This is the Awareness module for higher level car movement - including some text-to-speech annunciation
+VoiceRecognize.py - Recognition via Google Cloud Platform - Speech service
+tts.py - Simple text to speech using espeak
+SoundFX.py - plays sound files - handles 'good' and 'bad' sound alerts - ie: 2 good sounds make 'ack' for sp_rec
+VoiceRecord.py - records voice from a mic
+
+
+
