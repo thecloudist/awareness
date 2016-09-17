@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "enduring-fold-142318",
+  "private_key_id": "1ab3b4264316fbdbf2a7607f43be47b5cfe67dac",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTUMPRvyMI0ZHM\nY2h7ZRmXNxPRZpE5ZBun9N3Yd5CMuAxi70z6301o4fW5585+UM4NMN6+ybxko4V1\njObhBXszTYtmDHey0AWUgfNRphyATWobivC6DbAPTMVtnH/S/pxMA5Lr0Fnzbd+J\n3GhPOfvMTTovpwH+zkQb8vHa3L9dvslJgjqfFJba/5tFu3wFOIHdBy2k7mNYMcXt\nBzeWHV/bH7HmTL4L5d/BYgJdLmp/lW2r1BJ6QrOd3Mw9j177QY3OFhvAwpmzFFnh\ncO0kwwohHXAXbtxe8flq5otbDjt7uVUYxMIjedJOcH3Bm/NtTRgMAILKd6TUcvAt\nS8ngP5vdAgMBAAECggEBAMEn5SaXYS3RakT6ZOnN+vtW8/2HlJ1yHTmEQTh56h5G\nqcPRW3tBnF+Pk+5PrleWAxLZpfGdM2CGfBp8JhpvyTKW4iHwqYVAUqlxs3jhrtG0\ncZYlhW97zX/eu+Q6ljjGVRXCeoyk0WQK/bblSk+I/9m6icI/FTrVTjqB8oMNHrtP\nW6V6lCfIguniQ2D3d06WMZhCkzxvijBg6/UddUilZ7zwaB3A6YHlA1lTLgsAJuQG\nzig/hAg7D6ULpVG9jbH2+PjpVf+YASsRLIcQo/SAWZ3BnInuIkiEwiWtotYRZ166\nAJQEkh4mThYEPNMn/D9YQaPywnaCpS/EaFeCE6RdHEECgYEA/Xf8P6A9Py/1myfy\n9vHrO8ZlReR20iKhvNwuHmjQnJWgyCAxJkAsz31ebw/2kra7lPUOS+gXT05BKYW0\nT7GkCcWWKnlc5P0YwEmuI0dl0/vDmKrbiimxEMqP8LTu6anwHfLNk/ISBc93yYZ+\n43R8MagIs59Mvpd/roTEpCjpTW0CgYEA1W0C4bMQ63IuJw8kpkv9tunkpUhluiy5\nhlUyD5u48FZuRa6QuOydAM2OcXw1Pah+a4B64NdB+AsH6yfOr68zU1M6XON1cis/\npceVi61WhNCouTnJgMkggTLmoAjidswD6OOK/l7FOlWr8f9XgicCeeMdHmwssPSF\ng6YmbROKsjECgYBVZVdXGGWKJF5bJ9pz2I2oVe9I3PArW/+h4YyoMigWmVLSGgZ1\nHKn8PgDS6k3ooCgSx31JlahEz9ikZKebMf5STH+LT9g8TglIv4or2KI2CVyc0vOk\nWOePAK/+KPdVQivj6ynX7naj/oIdI3McruIo2LQV0FXK4L/jzFdz91SjAQKBgGax\nU0eiT6vaftaQdMQHoIbYuAnHchtI1eQLLlFQToZmMB0bR8uTHmB6h+WXLE8Euf+k\nDHwPV1CwjhjaSJtEI+AeFeEIGUTcBn4QMKbKuuyhMe4eHhT3sco44btzSvR6ag8v\nHXwTwba17kw83rBjcM+RNjujNUXYAj48PhUR6BShAoGBAPToFlDgBE5XEe8odhyu\nKadyhvBCgUWcQLmvkHrj6qN+ZtHD8zmNupNmYqMWDHmpf8Mk6esSaOLs9T2DoCF0\n8xAFRMYBvwoI4DHwbVTR/YOtPNsfe980AsUsgAXN33JfU8H6h6k1H/ZCq53lB4tr\np2dBIt2LFQAMBJlbmcY/h4c3\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-speech-test@enduring-fold-142318.iam.gserviceaccount.com",
+  "client_id": "103410801595160949313",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-speech-test%40enduring-fold-142318.iam.gserviceaccount.com"
+}

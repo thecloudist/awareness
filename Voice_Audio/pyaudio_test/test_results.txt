@@ -1,0 +1,136 @@
+
+PortAudio System Info:
+======================
+Version: 1899
+Version Text: PortAudio V19-devel (built Feb 21 2014 06:46:01)
+Number of Host APIs: 2
+Number of Devices  : 6
+
+Host APIs:
+==========
+index: 0
+name: ALSA
+defaultOutputDevice: 5
+type: 8
+deviceCount: 6
+defaultInputDevice: 2
+structVersion: 1
+--------------------------
+index: 1
+name: OSS
+defaultOutputDevice: -1
+type: 7
+deviceCount: 0
+defaultInputDevice: -1
+structVersion: 1
+--------------------------
+
+Devices:
+========
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: 0.00580498866213
+	defaultLowInputLatency: -1.0
+	maxInputChannels: 0
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 0
+	defaultHighOutputLatency: 0.0348299319728
+	maxOutputChannels: 2
+	name: bcm2835 ALSA: - (hw:0,0)
+	defaultHighInputLatency: -1.0
+	Output rates: [8000.0, 9600.0, 11025.0, 12000.0, 16000.0, 22050.0, 24000.0, 32000.0, 44100.0, 48000.0]
+	--------------------------------
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: 0.00580498866213
+	defaultLowInputLatency: -1.0
+	maxInputChannels: 0
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 1
+	defaultHighOutputLatency: 0.0348299319728
+	maxOutputChannels: 2
+	name: bcm2835 ALSA: IEC958/HDMI (hw:0,1)
+	defaultHighInputLatency: -1.0
+	Output rates: [44100.0, 48000.0]
+	--------------------------------
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: -1.0
+	defaultLowInputLatency: 0.00868480725624
+	maxInputChannels: 1
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 2
+	defaultHighOutputLatency: -1.0
+	maxOutputChannels: 0
+	name: USB PnP Sound Device: Audio (hw:1,0)
+	defaultHighInputLatency: 0.0348299319728
+	Input rates: [44100.0, 48000.0]
+	--------------------------------
+	defaultSampleRate: 48000.0
+	defaultLowOutputLatency: -1.0
+	defaultLowInputLatency: 0.0213333333333
+	maxInputChannels: 128
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 3
+	defaultHighOutputLatency: -1.0
+	maxOutputChannels: 0
+	name: sysdefault
+	defaultHighInputLatency: 0.0213333333333
+	Input rates: [8000.0, 9600.0, 11025.0, 16000.0, 22050.0, 32000.0, 44100.0, 48000.0, 88200.0]
+	--------------------------------
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: -1.0
+	defaultLowInputLatency: 0.00868480725624
+	maxInputChannels: 1
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 4
+	defaultHighOutputLatency: -1.0
+	maxOutputChannels: 0
+	name: spdif
+	defaultHighInputLatency: 0.0348299319728
+	Input rates: [44100.0, 48000.0]
+	--------------------------------
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: 0.00580498866213
+	defaultLowInputLatency: -1.0
+	maxInputChannels: 0
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 5
+	defaultHighOutputLatency: 0.0348299319728
+	maxOutputChannels: 2
+	name: default
+	defaultHighInputLatency: -1.0
+	Output rates: [8000.0, 9600.0, 11025.0, 12000.0, 16000.0, 22050.0, 24000.0, 32000.0, 44100.0, 48000.0]
+	--------------------------------
+
+Default Devices:
+================
+Default Input Device : 2
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: -1.0
+	defaultLowInputLatency: 0.00868480725624
+	maxInputChannels: 1
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 2
+	defaultHighOutputLatency: -1.0
+	maxOutputChannels: 0
+	name: USB PnP Sound Device: Audio (hw:1,0)
+	defaultHighInputLatency: 0.0348299319728
+	--------------------------------
+Default Output Device: 5
+	defaultSampleRate: 44100.0
+	defaultLowOutputLatency: 0.00580498866213
+	defaultLowInputLatency: -1.0
+	maxInputChannels: 0
+	structVersion: 2
+	hostApi: 0 (ALSA)
+	index: 5
+	defaultHighOutputLatency: 0.0348299319728
+	maxOutputChannels: 2
+	name: default
+	defaultHighInputLatency: -1.0
+	--------------------------------

@@ -1,0 +1,11 @@
+#
+# TalkBack - Methods to produce speech output
+# Ie: RepeatCommand(cmd)
+# or: SayThis(phrase)
+#
+# SoundFX - Methods to create annunciations like beeps
+# Ie: Beep(GoodBeep) - select a beep tone by name and play it as audio playback
+#
+
+
+
