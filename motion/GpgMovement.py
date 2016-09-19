@@ -49,7 +49,7 @@ ie:  8 = 90 degrees
 
 def DriveTo(voice,dir,speed,distance):
 	set_speed(speed)
-	if dir == 'f':
+	if dir == 'forward':
 		if voice:
 			tell_me_what(dir,speed,distance)
 			fwd()
@@ -57,7 +57,7 @@ def DriveTo(voice,dir,speed,distance):
 		else:
 			fwd()
 			enc_tgt(1,1,distance)
-	elif dir == 'b':
+	elif dir == 'back':
 		if voice:
 			tell_me_what(dir, speed, distance)
 			bwd()
@@ -65,7 +65,7 @@ def DriveTo(voice,dir,speed,distance):
 		else:
 			bwd()
 			enc_tgt(1,1,distance)
-	elif dir == 'l':
+	elif dir == 'left':
 		if voice:
 			tell_me_what(dir, speed, distance)
 			left_rot()
@@ -82,7 +82,7 @@ def DriveTo(voice,dir,speed,distance):
 				sleep(.1)
 			fwd()
 			enc_tgt(1,1,distance)
-	elif dir == 'r':
+	elif dir == 'right':
 		if voice:
 			tell_me_what(dir, speed, distance)
 			right_rot()
@@ -98,6 +98,13 @@ def DriveTo(voice,dir,speed,distance):
 				sleep(.1)
 			fwd()
 			enc_tgt(1, 1, distance)
+	elif dir == 'stop':
+		if voice:
+			tell_me_what(dir, speed, distance)
+			stop()
+		else:
+			stop()
+
 
 # main function - issue DriveTo commands which will say them as they are executed)
 

@@ -26,11 +26,12 @@ from google.cloud.speech.v1beta1 import cloud_speech_pb2 as cloud_speech
 from google.rpc import code_pb2
 from grpc.beta import implementations
 import pyaudio
+import json
 
 # Audio recording parameters
-RATE = 16000
+RATE = 44100
 CHANNELS = 1
-CHUNK = int(RATE / 10)  # 100ms
+CHUNK = 512
 
 # Keep the request alive for this many seconds
 DEADLINE_SECS = 8 * 60 * 60
@@ -148,7 +149,22 @@ def listen_print_loop(recognize_stream):
 
         # Display the transcriptions & their alternatives
         for result in resp.results:
-            print(result.alternatives)
+            # print(result.alternatives)
+            # sresult_str = str(result.alternatives)
+            quoted_transcript = extract_transcript(str(result.alternatives))
+            print(quoted_transcript.split())
+
+
+            '''
+            <class 'google.cloud.speech.v1beta1.cloud_speech_pb2.StreamingRecognitionResult'>
+            Printing result as a string gives:
+                alternatives
+                {
+                    transcript: " exit"
+                    confidence: 0.930871963501
+                }
+            '''
+
 
         # Exit recognition if any of the transcribed phrases could be
         # one of our keywords.
@@ -158,15 +174,22 @@ def listen_print_loop(recognize_stream):
             print('Exiting..')
             return
 
+'''
+Crack out the "quoted" stuff in the response.
+Uses Regex to do it, quite cute.  (Thanks to http://stackoverflow.com/users/95810/alex-martelli)
+'''
+def extract_transcript(transcript_result):
+    quoted = re.compile('"[^"]*"')
+    for value in quoted.findall(transcript_result):
+        return value
 
 def main():
     stop_audio = threading.Event()
     with cloud_speech.beta_create_Speech_stub(
             make_channel('speech.googleapis.com', 443)) as service:
         try:
-            listen_print_loop(
-                service.StreamingRecognize(
-                    request_stream(stop_audio), DEADLINE_SECS))
+            listen_print_loop(service.StreamingRecognize(request_stream(stop_audio), DEADLINE_SECS))
+
         finally:
             # Stop the request stream once we're done with the loop - otherwise
             # it'll keep going in the thread that the grpc lib makes for it..

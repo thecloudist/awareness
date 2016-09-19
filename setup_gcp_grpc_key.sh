@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS=/home/pi/Awareness/Voice_Audio/voice/keys/google_speech_svc_acct.json

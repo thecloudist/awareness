@@ -1,6 +1,8 @@
+from gopigo import *
+from GpgMovement import *
 import sys
-
-sys.path.insert(0, '/home/pi/gopigo/Projects/Awareness/motion')
-
-from GpgMovement import DriveTo
-
+from subprocess import call
+from time import sleep
+# from tts import *
+from positioning import Dist_Enc_Tics as d2tics
+from transcribe_streaming_thread import *
