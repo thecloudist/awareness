@@ -16,19 +16,22 @@ import time
 GoodBeep = "voc22.wav"
 BadBeep = "c005.wav"
 
-
+Aplay_Cmd_Params = " -D hw:0,0 -c1 -f cd "
 
 SoundFxPath = "/home/pi/gopigo/Projects/Awareness/Voice_Audio/SoundOutput/SoundFiles/"
 
-Good = SoundFxPath+GoodBeep
-Bad = SoundFxPath+BadBeep
+GoodSound = Aplay_Cmd_Params+SoundFxPath+GoodBeep
+BadSound = Aplay_Cmd_Params+SoundFxPath+BadBeep
+AplayCmd = "aplay"
 
 def PlayEffect(effect):
     if effect == 'good':
-        call(["aplay", Good])
+        print GoodSound
+        call([AplayCmd + GoodSound],shell=True)
         return(True)
     elif effect == 'bad':
-        call(["aplay", Bad])
+        print BadSound
+        call([AplayCmd + BadSound],shell=True)
         return(True)
     else:
         if effect != 'good' & effect != 'bad':

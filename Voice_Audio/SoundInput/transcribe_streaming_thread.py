@@ -152,7 +152,7 @@ def listen_print_loop(recognize_stream):
             # print(result.alternatives)
             # sresult_str = str(result.alternatives)
             quoted_transcript = extract_transcript(str(result.alternatives))
-            print(quoted_transcript.split())
+            # print(quoted_transcript.split())
 
 
             '''

@@ -18,6 +18,7 @@ from GpgMovement import *
 import sys
 from subprocess import call
 from time import sleep
+from SoundFX import PlayEffect
 from tts import *
 from positioning import Dist_Enc_Tics as d2tics
 from transcribe_streaming_thread import *
@@ -39,12 +40,14 @@ def Textify(commands):
 
 
 def main():
+
     stop_audio = threading.Event()
     with cloud_speech.beta_create_Speech_stub(
             make_channel('speech.googleapis.com', 443)) as service:
         try:
             listen_transcribe_loop(service.StreamingRecognize(request_stream(stop_audio), DEADLINE_SECS))
-           # DriveTo(voice, cmd_string, speed, d2tics(inches))
+            # print "CmdSet in main -->", CmdSet
+            # DriveTo(CmdSet)
 
 
 

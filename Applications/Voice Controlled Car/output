@@ -1,0 +1,128 @@
+First comes the transcript
+
+[transcript: "directions forward speed 50 distance 8"
+confidence: 0.725931346416
+]
+Value --> "directions forward speed 50 distance 8"
+pattern after textify -->  directions forward speed 50 distance 8
+after extract_transcript -->  directions forward speed 50 distance 8
+Inside CmdStrToDict commandstr --> ['', 'directions', 'forward', 'speed', '50', 'distance', '8', '']
+after CmdStrToDict Direction ==>
+{'': 'directions', 'forward': 'speed', '50': 'distance', '8': ''}
+
+
+>>> cmdstr = 'direction forward speed 50 distance 8'
+>>> cmdstr
+'direction forward speed 50 distance 8'
+>>> cmdstr = cmdstr.split(" ")
+>>> cmdstr
+['direction', 'forward', 'speed', '50', 'distance', '8']
+>>> dict(zip(*[iter(cmdstr)]*2))
+{'distance': '8', 'direction': 'forward', 'speed': '50'}
+>>> cmdstr
+['direction', 'forward', 'speed', '50', 'distance', '8']
+>>> cmdldict = dict(zip(*[iter(cmdstr)]*2))
+>>> cmdldict
+{'distance': '8', 'direction': 'forward', 'speed': '50'}
+>>> cmdldict['direction']
+'forward'
+>>> cmdldict['speed']
+'50'
+>>>
+
+Second TRY
+
+cmdstr
+'directions forward speed 50 distance 8'
+>>> pat = re.compile('\W')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 're' is not defined
+>>> import re
+>>> pat = re.compile('\W')
+>>> pat
+<_sre.SRE_Pattern object at 0x76cdf0f0>
+>>> cmdstrtemp = re.sub(pat, ' ', cmdstr)
+>>> comdstrtemp
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'comdstrtemp' is not defined
+>>> cmdstrtemp
+'directions forward speed 50 distance 8'
+>>> commandstr = cmdstrtemp.split(" ")
+>>> commandstr
+['directions', 'forward', 'speed', '50', 'distance', '8']
+>>> cmd_dict = dict(zip(*[iter(commandstr)]*2))
+>>> cmd_dict
+{'directions': 'forward', 'distance': '8', 'speed': '50'}
+>>>
+
+Third Try
+
+>>> mystr = " go forward speed 50 distance 8"
+>>> mstr
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'mstr' is not defined
+>>> mystr
+' go forward speed 50 distance 8'
+>>> mystr = " go forward speed 50 distance 8 "
+>>> mystr.rstrip(' ').split(' ')
+['', 'go', 'forward', 'speed', '50', 'distance', '8']
+>>> mystr.lstrip(' ').split(' ')
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+>>> mystr.lstrip(' ').split(' ')
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+>>> mystr
+' go forward speed 50 distance 8 '
+>>> newstr = mystr.lstrip(' ').split(' ')
+
+>>> newstr = newstr.rstrip(' ').split(' ')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'rstrip'
+>>> mystr
+' go forward speed 50 distance 8 '
+>>> newstr
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+
+>>> newstr = newstr.rstrip(' ').split(' ')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'rstrip'
+>>> beststr = newstr.rstrip(' ').split(' ')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'rstrip'
+
+>>> beststr = newstr
+>>> beststr
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+
+>>> newest = beststr.rstrip(' ').split(' ')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'rstrip'
+
+>>> beststr
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+>>> beststr.rstrip(' ')
+
+SEEMS TO BE THE ONE THAT WORKS
+
+>>> beststr
+['go', 'forward', 'speed', '50', 'distance', '8', '']
+
+>>> beststr = filter(None, beststr)
+>>> beststr
+['go', 'forward', 'speed', '50', 'distance', '8']
+
+>>> mystr
+' go forward speed 50 distance 8 '
+>>> xxxstr = mystr.split(' ')
+>>> xxxstr
+['', 'go', 'forward', 'speed', '50', 'distance', '8', '']
+>>> xxxstr = filter(None, xxxstr)
+>>> xxxstr
+['go', 'forward', 'speed', '50', 'distance', '8']
+>>>

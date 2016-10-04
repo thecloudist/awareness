@@ -107,7 +107,7 @@ substituting in your appropriate brew Cellar directory:
 
 * To run the `transcribe_streaming.py` sample:
 
-    ```sh
+    ```
     python transcribe_streaming.py
     ```
 

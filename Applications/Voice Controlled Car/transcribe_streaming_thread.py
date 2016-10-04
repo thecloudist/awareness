@@ -28,7 +28,7 @@ from grpc.beta import implementations
 import pyaudio
 import json
 from gopigo import *
-from GpgMovement import *
+from GpgMovement import DriveTo
 from positioning import Dist_Enc_Tics as d2tics
 from sys import exit
 
@@ -151,17 +151,23 @@ def request_stream(stop_audio, channels=CHANNELS, rate=RATE, chunk=CHUNK):
 
 
 def listen_transcribe_loop(recognize_stream):
+    CommandSet = {}
     for resp in recognize_stream:
         if resp.error.code != code_pb2.OK:
             raise RuntimeError('Server error: ' + resp.error.message)
 
         # Display the transcriptions & their alternatives
         for result in resp.results:
-            # print(result.alternatives)
-            # sresult_str = str(result.alternatives)
-            command = extract_transcript(str(result.alternatives))
-            print command
-            DriveTo(voice, command, speed, d2tics(inches))
+            # convert the raw transcript into a string of words and spaces (cmdstr)
+            # ???????
+            cmdstr = extract_transcript(str(result.alternatives))
+            # print "after extract_transcript -->",cmdstr
+            # now convert the cmdstr into a CommandSet{} dictionary
+            CommandSet = CmdStrToDict(cmdstr) # returns dictionary of CommandSet
+            print CommandSet
+            # return CommandSet
+
+            DriveTo(CommandSet) # pass the CommandSet dictionary to DriveTo
 
         # Exit recognition if any of the transcribed phrases could be
         # one of our keywords.
@@ -173,6 +179,25 @@ def listen_transcribe_loop(recognize_stream):
 
             #return 'False
 
+'''
+CmdStrToDict(cmdstr)
+Converts a command string of space delimeted commands and values into a proper dictionary
+Returns a dictionary
+
+'''
+
+def CmdStrToDict(cmdstr):
+# first convert string to list
+    # print "Inside CmdStrToDict before split -->", cmdstr
+
+    cmdstr = cmdstr.split(' ')
+    # print  "Inside CmdStrToDict after split cmdstr -->",cmdstr
+    cmdstr = filter(None, cmdstr)
+    # print  "Inside CmdStrToDict after split cmdstr -->",cmdstr
+    cmd_dict = dict(zip(*[iter(cmdstr)]*2))
+    return cmd_dict
+
+
 
 
 '''
@@ -181,9 +206,15 @@ Uses Regex to do it, quite cute.  (Thanks to http://stackoverflow.com/users/9581
 '''
 
 def extract_transcript(transcript_result):
-    quoted = re.compile('"[^"]*"')
+    # type(transcript_result)
+   # print ("transcript_results --> %s" %transcript_result
+    quoted = re.compile('"[^"]*"')  # quoted = re.compile('"[^"]*"')
+    # print "quoted -->" , quoted
     for value in quoted.findall(transcript_result):
+        # print ("Value --> %s " % value)
         pattern = Textify(value)
+        # print ("pattern after textify --> %s" %pattern)
+        # return a dictionary of key:values
         return pattern
 
 
@@ -192,7 +223,7 @@ def extract_transcript(transcript_result):
 def Textify(commands):
     commands = str(commands)
     pat = re.compile('\W')
-    commands = re.sub(pat, '', commands)
+    commands = re.sub(pat, ' ', commands)
     texted_cmds = commands
     return(texted_cmds)
 
