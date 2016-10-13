@@ -16,6 +16,7 @@ from gopigo import *
 import sys
 from subprocess import call
 from time import sleep
+from positioning import *
 
 from word2number import w2n
 from positioning import Dist_Enc_Tics as d2tics
@@ -42,17 +43,19 @@ def GoAhead(speed):
 	set_speed(speed)
 	fwd()
 
-def TurnToPort(speed):
+def TurnToPort(degrees):
 	set_speed(40)
 	right_rot()
-	enc_tgt(1,1,8) # just 90 degrees for now
-	sleep(2)
-	set_speed(speed)
-	fwd()
+	enc_tgt(1,1,Degrees_Enc_Tics(degrees)) # turn by degrees
+	# sleep(2)
+	# set_speed(speed)
+	# fwd()
 
-def TurnToStarboard():
+def TurnToStarboard(degrees):
+	set_speed(40)
 	left_rot()
-	enc_tgt(1, 1, 8)  # just 90 degrees for now
+	enc_tgt(1, 1, Degrees_Enc_Tics(degrees))  # turn by degrees
+
 
 def GoBackward(speed):
 	set_speed(speed)
@@ -60,11 +63,16 @@ def GoBackward(speed):
 
 def AllStop(): # slow down before stopping abruptly
 	set_speed(30)
+	sleep(1)
 	stop()
 
 def ReturnToBase():
+	sleep(1)
 	stop()
-	rotate(180)
+	set_speed(100)
+	left_rot()
+	degrees = 180
+	enc_tgt(1, 1, Degrees_Enc_Tics(degrees))  # turn by degrees
 	sys.exit()
 
 '''

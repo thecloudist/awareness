@@ -152,27 +152,28 @@ or "starboard" then "ahead warp factor 3"
 def ParseHelmCmds(CmdString):
 
 	direction = CmdString['direction']
-	speed = ResolveSpeed(CmdString['speed'])
-	print speed
+	WarpSpeed = ResolveSpeed(CmdString['speed'])
+	print WarpSpeed
 
 	if direction == 'ahead':
-		GoAhead(speed)
+		GoAhead(WarpSpeed)
 
 	elif direction == 'port':
-		TurnToPort(speed)
+		TurnToPort(int(CmdString['speed']))
+		print 'TurnToPort degrees -->', int(CmdString['speed'])
 
 	elif direction == 'starboard':
-		TurnToStarboard(speed)
+		TurnToStarboard(int(CmdString['speed']))
 
 	elif direction == 'astern':
-		GoBackWard(speed)
+		GoBackWard(WarpSpeed)
 
 	elif direction == 'speed':
-		speed = ResolveSpeed(CmdString['speed'])
-		set_speed(speed)
+		WarpSpeed = ResolveSpeed(CmdString['speed'])
+		set_speed(WarpSpeed)
 
-	elif direction == 'all stop':
-		AllStop()
+	elif direction == 'allstop':
+		ReturnToBase()
 
 '''
 Engineering
@@ -187,17 +188,18 @@ def ParseEngCmds(EngCmdStr):
 
 def main():
 
-	CmdStr1 = "helm ahead warpfactor2"
+	CmdStr1 = "helm ahead warpfactor3"
 	CmdStr2 = "helm speed warpfactor5"
-	CmdStr3 = "helm port warpfactor4"
-	CmdStr4 = "helm speed stop"
-	CmdStr5 = "Engineering status power"
+	CmdStr3 = "helm port 45"
+	CmdStr4 = "helm ahead warpfactor3"
+	CmdStr5 = "helm allstop warpfactor1"
+	#CmdStr5 = "Engineering status power"
 	CmdStr6 = "Engineering status temperature"
 
 
 
 # add the strings to a list of strings to run
-	CmdList = [CmdStr1,CmdStr2,CmdStr3,CmdStr4] #,CmdStr5,CmdStr6]
+	CmdList = [CmdStr1,CmdStr2,CmdStr3,CmdStr4,CmdStr5] #,CmdStr5,CmdStr6]
 
 	for i in CmdList:
 		CmdString = i
