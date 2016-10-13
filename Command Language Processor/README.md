@@ -7,13 +7,16 @@
 * Rev 1.0 - Fixed format motion control command set
 * (Future) Rev 2.0 - Variable format motion control command set, 
 
-### Algorithm
+### Algorithm 1.0 - Motion command strings
 
 Pass a set of commands right from recognizer to ExtractTranscript()
 This calls textify() and returns a cleaned up string with spaces separating the commands
 Then this string is passed to CmdStrToDict() which splits the string into a list with command pairs
 Then this list is dict and zipped into a proper dictionary which is passed on to DriveTo now handling commands as key:value pairs
 
+### Algprithm 1.1  Arbitrary commands and strings
+
+Transcripts go into a queue. Legal command pairs {'key': val} 
 
 ## Lexicon - Commands and their alpha or numeric definitions
 

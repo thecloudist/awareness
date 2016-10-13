@@ -194,6 +194,7 @@ def CmdStrToDict(cmdstr):
     # print  "Inside CmdStrToDict after split cmdstr -->",cmdstr
     cmdstr = filter(None, cmdstr)
     # print  "Inside CmdStrToDict after split cmdstr -->",cmdstr
+# Nice little zip thing that dict-a-fies the cmdstr with 1st = key, 2nd = value from separate commands
     cmd_dict = dict(zip(*[iter(cmdstr)]*2))
     return cmd_dict
 

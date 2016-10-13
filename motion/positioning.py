@@ -16,19 +16,12 @@ ie: call feet to inches, meters to inches, millimeters to inches
 # One Wheel Rotation = 18.0
 
 Ticks_Per_Inch = 18.0/8.0
+Ticks_Per_360_Turn = 32.0  # when executing port 90, read 8 ticks from encoder
 
 def Dist_Enc_Tics(inches):
     return int(round(Ticks_Per_Inch * inches,2))
 
-'''
-inches = 24n
-print "Ticks per inch = %.2f " %Ticks_Per_Inch
-print "Inches to move %d" %inches
-
-
-
-print "Number of tics for %d inches = " %inches, (Dist_Enc_Tics(inches))
-
-'''
-
+def Degrees_Enc_Tics(degrees):
+    # 90 degrees from 8 tics of right wheel forward encoder target
+    return int((Ticks_Per_360_Turn/360) * degrees )
 
