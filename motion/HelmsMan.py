@@ -20,23 +20,26 @@ from positioning import *
 
 from word2number import w2n
 from positioning import Dist_Enc_Tics as d2tics
+
 # from raspi_trek_lexicon import *
+# need to use impulse under 100 and warp 100-250
+# for now warp 10-100 , 1-5
 
 
 def ResolveSpeed(warp_speed):
-		if warp_speed == 'warpfactor1':
+		if warp_speed == 'warpfactorone':
 			return(10)
 
-		elif warp_speed == 'warpfactor2':
+		elif warp_speed == 'warpfactortwo':
 			return(30)
 
-		elif warp_speed == 'warpfactor3':
+		elif warp_speed == 'warpfactorthree':
 			return(50)
 
-		elif warp_speed == 'warpfactor4':
+		elif warp_speed == 'warpfactorfour':
 			return(75)
 
-		elif warp_speed == 'warpfactor5':
+		elif warp_speed == 'warpfactorfive':
 			return(100)
 
 def GoAhead(speed):

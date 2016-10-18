@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS=/home/pi/Awareness/Applications/Raspi-Trek/google_speech_rec/google_speech_svc_acct.json

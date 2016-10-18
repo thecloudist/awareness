@@ -158,7 +158,7 @@ def ParseHelmCmds(CmdString):
 	if direction == 'ahead':
 		GoAhead(WarpSpeed)
 
-	elif direction == 'port':
+	elif direction == 'port': # speed will actually be degrees of turn
 		TurnToPort(int(CmdString['speed']))
 		print 'TurnToPort degrees -->', int(CmdString['speed'])
 

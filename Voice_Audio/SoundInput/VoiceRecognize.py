@@ -19,7 +19,7 @@ from subprocess import call
 from time import sleep
 # from tts import *
 
-from transcribe_streaming_thread import *
+from transcribe_streaming_thread_orig import *
 
 def main():
     stop_audio = threading.Event()
